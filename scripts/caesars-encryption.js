@@ -1,17 +1,22 @@
 
 var alphabet = "abcdefghijklmnopqrstuvwxyz";
 var newalpha = "";
-let n = 3;
+let n = 2;
 
 var message="";
 var encrypted = document.getElementById('caesar_encrypted');
 
-function display()
+function displayencode()
 {
-    shift(3);
-    message = document.getElementById("caesar_original").value;
+    shift(n);
+   message = document.getElementById("caesar_original").value;
    encrypted.innerHTML = encode(message);
     
+}
+function displaydecode()
+{
+    message = document.getElementById("caesar_encrypted").value;
+    encrypted.innerHTML = decode(message);
 }
 
 

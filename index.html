@@ -21,9 +21,9 @@
                 <a class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" href="#nav-home" role="tab"
                     aria-controls="nav-home" aria-selected="true">Caesars Encryption</a>
                 <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" href="#nav-profile" role="tab"
-                    aria-controls="nav-profile" aria-selected="false">Profile</a>
+                    aria-controls="nav-profile" aria-selected="false">AES</a>
                 <a class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" href="#nav-contact" role="tab"
-                    aria-controls="nav-contact" aria-selected="false">Contact</a>
+                    aria-controls="nav-contact" aria-selected="false">HASH</a>
             </div>
         </nav>
         <div class="tab-content bg-light" id="nav-tabContent">
@@ -32,11 +32,11 @@
                 <div class="container">
                     <label for="">Enter text you want to encrypt</label><br>
                     <textarea name="caesar-original" id="caesar_original" cols="50" rows="2"></textarea><br>
-                    <button class="btn bg-primary text-light mb-5" id="submit-btn" type="submit" onclick="display()"
-                        value="save">Submit</button><br>
+                    <button class="btn bg-primary text-light mb-5" id="submit-btn" type="submit"
+                        onclick="displayencode()" value="save">Submit</button><br>
                     <label for="">Encrypted text</label><br>
                     <textarea name="caesar_encrypted" id="caesar_encrypted" cols="50" rows="2"></textarea><br>
-                    <button class="btn bg-danger text-light">Decode</button>
+                    <button class="btn bg-danger text-light" onclick="displaydecode()">Decode</button>
 
                 </div>
                 <img src="caesar-cipher.png" height="40%" alt="" class="img img-fluid">
