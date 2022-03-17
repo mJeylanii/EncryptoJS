@@ -6,6 +6,7 @@ let n = 2;
 var message="";
 var encrypted = document.getElementById('caesar_encrypted');
 
+//Function to be called when button clicked
 function displayencode()
 {
     shift(n);
@@ -18,7 +19,6 @@ function displaydecode()
     message = document.getElementById("caesar_encrypted").value;
     encrypted.innerHTML = decode(message);
 }
-
 
 function shift(n){
     for (let i = 0; i < alphabet.length; i++){
