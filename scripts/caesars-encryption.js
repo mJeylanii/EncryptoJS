@@ -1,10 +1,12 @@
 
 var alphabet = "abcdefghijklmnopqrstuvwxyz";
 var newalpha = "";
-let n = 2;
+let n = 1;
 
 var message="";
 var encrypted = document.getElementById('caesar_encrypted');
+var decoded = document.getElementById('caesar_original');
+
 
 //Function to be called when button clicked
 function displayencode()
@@ -16,8 +18,9 @@ function displayencode()
 }
 function displaydecode()
 {
+    shift(n)
     message = document.getElementById("caesar_encrypted").value;
-    encrypted.innerHTML = decode(message);
+    decoded.innerHTML = decode(message);
 }
 
 function shift(n){
