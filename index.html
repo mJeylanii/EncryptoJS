@@ -9,38 +9,48 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 </head>
 
 <body>
-    <h1 class="display-5 text-center">Encryption app</h1>
-    <p class="lead text-center">This app is free to use and can encrypt/decrypt in different encyrption algorithms</p>
+    <h1 class="display-5 text-center text-light">Encryption app</h1>
+    <p class="lead text-center text-light">This app is free to use and can encrypt/decrypt in different encyrption
+        algorithms</p>
     <div class="container">
 
         <nav>
-            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <div class="nav nav-tabs bg-light" id="nav-tab" role="tablist">
                 <a class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" href="#nav-home" role="tab"
-                    aria-controls="nav-home" aria-selected="true">Home</a>
+                    aria-controls="nav-home" aria-selected="true">Caesars</a>
                 <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" href="#nav-profile" role="tab"
-                    aria-controls="nav-profile" aria-selected="false">Profile</a>
+                    aria-controls="nav-profile" aria-selected="false">AES</a>
                 <a class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" href="#nav-contact" role="tab"
-                    aria-controls="nav-contact" aria-selected="false">Contact</a>
+                    aria-controls="nav-contact" aria-selected="false">HASH</a>
             </div>
         </nav>
-        <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                <p>clicked home</p>
-                <p>clicked home</p>
-                <p>clicked home</p>
+        <div class="tab-content bg-light" id="nav-tabContent">
+            <div class="caesars tab-pane fade show active p-5 d-flex" id="nav-home" role="tabpanel"
+                aria-labelledby="nav-home-tab">
+                <div class="container">
+                    <label for="">Original text</label><br>
+                    <textarea name="caesar-original" id="caesar_original" cols="50" rows="2"></textarea><br>
+                    Shifts: <input class="mb-3" type="number" id="shifts" name="quantity" min="1" max="5"><br>
+                    <button class="btn bg-primary text-light mb-5" id="submit-btn" type="submit"
+                        onclick="displayencode()" value="save">Encode</button><br>
+                    <label for="">Encrypted text</label><br>
+                    <textarea name="caesar_encrypted" id="caesar_encrypted" cols="50" rows="2"></textarea><br>
+                    <button class="btn bg-danger text-light" onclick="displaydecode()">Decode</button>
+                </div>
             </div>
+
             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                <p>clicked profile</p>
-                <p>clicked profile</p>
-                <p>clicked profile</p>
+
             </div>
             <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                <p>clicked contact</p>
-                <p>clicked contact</p>
-                <p>clicked contact</p>
+
             </div>
         </div>
     </div>
@@ -48,6 +58,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
+    <script src="scripts/caesars-encryption.js"></script>
 </body>
 
 </html>
