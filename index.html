@@ -17,12 +17,11 @@
 
 <body>
     <h1 class="display-5 text-center text-light">Encryption app</h1>
-    <p class="lead text-center text-light">This app is free to use and can encrypt/decrypt in different encyrption
+    <p class="lead text-center text-light mb-5">This app is free to use and can encrypt/decrypt in different encyrption
         algorithms</p>
-    <div class="container">
-
-        <nav>
-            <div class="nav nav-tabs bg-light" id="nav-tab" role="tablist">
+    <div class="container container-lg container-sm rounded-md mt-5">
+        <nav class="mt0-5">
+            <div class="nav nav-tabs bg-light rounded" id="nav-tab" role="tablist">
                 <a class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" href="#nav-home" role="tab"
                     aria-controls="nav-home" aria-selected="true">Caesars</a>
                 <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" href="#nav-profile" role="tab"
@@ -31,17 +30,19 @@
                     aria-controls="nav-contact" aria-selected="false">HASH</a>
             </div>
         </nav>
-        <div class="tab-content bg-light" id="nav-tabContent">
-            <div class="caesars tab-pane fade show active p-5 d-flex" id="nav-home" role="tabpanel"
+        <div class="tab-content bg-light rounded-md" id="nav-tabContent">
+            <div class="caesars tab-pane fade show active p-5 d-flex h-50" id="nav-home" role="tabpanel"
                 aria-labelledby="nav-home-tab">
                 <div class="container">
                     <label for="">Original text</label><br>
-                    <textarea name="caesar-original" id="caesar_original" cols="50" rows="2"></textarea><br>
-                    Shifts: <input class="mb-3" type="number" id="shifts" name="quantity" min="1" max="5"><br>
+                    <textarea class="rounded-md border border-primary w-auto" name="caesar-original"
+                        id="caesar_original"></textarea><br>
+                    Shifts: <input class="mb-3 rounded" type="number" id="shifts" name="quantity" min="1" max="5"><br>
                     <button class="btn bg-primary text-light mb-5" id="submit-btn" type="submit"
                         onclick="displayencode()" value="save">Encode</button><br>
                     <label for="">Encrypted text</label><br>
-                    <textarea name="caesar_encrypted" id="caesar_encrypted" cols="50" rows="2"></textarea><br>
+                    <textarea class="border border-danger w-auto w-lg-50" name="caesar_encrypted"
+                        id="caesar_encrypted"></textarea><br>
                     <button class="btn bg-danger text-light" onclick="displaydecode()">Decode</button>
                 </div>
             </div>
@@ -59,6 +60,7 @@
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
     <script src="scripts/caesars-encryption.js"></script>
+    <script src="scripts/DES-encryption.js"></script>
 </body>
 
 </html>

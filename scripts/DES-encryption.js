@@ -6,7 +6,7 @@ function encryptDesCbcPkcs7Padding(message, key) {
     return encrypted;//.toString(CryptoJS.enc.Utf8);
 }
 
-var plainText = "hola";
+var plainText = "Hello how are you?";
 console.log("Plain text: ", plainText);
 var base64Coded = window.btoa(plainText);
 console.log("Base64 coded text: ", base64Coded);
