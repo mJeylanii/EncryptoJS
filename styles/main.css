@@ -5,6 +5,9 @@
 }
 body {
   background-color: gray !important;
+  font-weight: 500!important;
+  font-family: Verdana, Geneva, Tahoma, sans-serif!important;
+
 }
 
 .casesars {
