@@ -2,12 +2,13 @@
 var alphabet = "abcdefghijklmnopqrstuvwxyz";
 var newalpha = "";
 let text="";
-const n = document.getElementById('shifts').value ;
+
+const n = document.getElementsByName('answer');
+console.log(n);
 //Function to be called when button clicked
 function displayencode()
 {
-    
-    shift(n);
+   shift(n);
    text = document.getElementById("caesar_original").value;
    document.getElementById('caesar_encrypted').value = encode(text);
    document.getElementById('caesar_original').value ="";

@@ -7,139 +7,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encrypto</title>
     <link rel="stylesheet" href="styles/main.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
 </head>
 
-<body>
-    <h1 class="display-5 text-center text-light ">Encryption app</h1>
-    <p class="lead text-center text-light mb-5">This app is free to use and can encrypt/decrypt in different encyrption
-        algorithms</p>
-    <div class="container rounded-md mt-5 shadow-md">
-        <nav class="mt-5">
-            <div class="nav nav-tabs bg-secondary rounded" id="nav-tab" role="tablist">
-                <a class="nav-link active bg-secondary text-light" id="nav-home-tab" data-bs-toggle="tab"
-                    href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Caesars</a>
-                <a class="nav-link bg-secondary text-light" id="nav-profile-tab" data-bs-toggle="tab"
-                    href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">DES</a>
-                <a class="nav-link bg-secondary text-light" id="nav-contact-tab" data-bs-toggle="tab"
-                    href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">RSA</a>
-            </div>
-        </nav>
-        <div class="tab-content bg-secondary  rounded-md p-5" id="nav-tabContent">
-            <div class="caesars tab-pane fade show active  " id="nav-home" role="tabpanel"
-                aria-labelledby="nav-home-tab">
-                <div class="container row text-light">
-                    <div class="d-flex justify-center col-lg">
-                        <img class="img-fluid" src="./caesar-cipher.png" alt="">
-                    </div>
-                    <div class="col-lg">
-                        <label for="">Original text</label><br>
-                        <textarea class="rounded-md border border-primary w-100" name="caesar-original"
-                            id="caesar_original"></textarea><br>
-                        Shifts: <input class="mb-3 rounded" type="number" id="shifts" name="quantity" min="1"
-                            max="5"><br>
-                        <button class="btn bg-primary text-light mb-5" id="submit-btn" type="submit"
-                            onclick="displayencode()" value="save">Encode</button><br>
-                        <label for="">Encrypted text</label><br>
-                        <textarea class="border border-danger w-100" name="caesar_encrypted"
-                            id="caesar_encrypted"></textarea><br>
-                        <button class="btn bg-danger text-light" onclick="displaydecode()">Decode</button>
-                    </div>
-                </div>
-            </div>
-            <div class="DES tab-pane fade h-50" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                <div class="container row row-cols-1">
-                    <div class="container h-25 col-6">
-                        <p><a
-                                href="https://commons.wikimedia.org/wiki/File:Data_Encription_Standard_Flow_Diagram.svg#/media/File:Data_Encription_Standard_Flow_Diagram.svg"><img
-                                    class="img-fluid h-25"
-                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Data_Encription_Standard_Flow_Diagram.svg/1200px-Data_Encription_Standard_Flow_Diagram.svg.png"
-                                    alt="Data Encription Standard Flow Diagram.svg"></a><br>By User:Hellisp - File:Data
-                            Encryption Standard InfoBox Diagram.png, <a
-                                href="http://creativecommons.org/publicdomain/zero/1.0/deed.en"
-                                title="Creative Commons Zero, Public Domain Dedication">CC0</a>, <a
-                                href="https://commons.wikimedia.org/w/index.php?curid=33316542">Link</a></p>
-                    </div>
-                    <div class="container col-12 text-light">
-                        <label class="text-light" for="">Original text</label><br>
-                        <textarea class="rounded-md border border-primary w-50" name="caesar-original"
-                            id="caesar_original"></textarea><br>
-                        Shifts: <input class="mb-3 rounded" type="number" id="shifts" name="quantity" min="1"
-                            max="5"><br>
-                        <button class="btn bg-primary text-light mb-5" id="submit-btn" type="submit"
-                            onclick="displayencode()" value="save">Encode</button><br>
-                        <label class="text-light" for="">Encrypted text</label><br>
-                        <textarea class="border border-danger w-50" name="caesar_encrypted"
-                            id="caesar_encrypted"></textarea><br>
-                        <button class="btn bg-danger text-light" onclick="displaydecode()">Decode</button>
-                    </div>
-                </div>
-            </div>
+<body class="bg-zinc-900 text-white flex-col flex justify-center">
+    <div
+        class="mx-auto bg-zinc-800 rounded-lg container h-2/3 w-1/3 p-3  lg:w-1/4 md:w-3/4 sm:min-w-3/4 shadow-2xl p-4 ">
+        <div class="header text-center mb-8">
+            <h2 class="text-3xl">Caesar's Encryptor</h2>
+        </div>
+        <div class="container flex flex-col justify-center content-center mt-24">
+            <label class="text-2xl" for="">Original text</label><br>
+            <textarea class="rounded-md border text-white bg-zinc-700  focus:ring-2  outline-0 " name="caesar-original"
+                id="caesar_original"></textarea><br>
+            <div class="container flex flex-row md:min-w-2xl">
+                <ul class="grid grid-cols-5 content-center rounded-lg text-white mx-auto">
+                    <li class="relative">
+                        <input class="sr-only peer" type="radio" value="1" name="answer" id="shift_1">
+                        <label
+                            class="text-white rounded-l-lg flex p-3  bg-zinc-700 border border-gray-300  cursor-pointer focus:outline-none hover:bg-gray-400 hover:text-black peer-checked:shadow-inner peer-checked:bg-gray-250 peer-checked:border-transparent"
+                            for="shift_1">1</label>
+                    </li>
+                    <li class="relative">
+                        <input class="sr-only peer" type="radio" value="2" name="answer" id="shift_2">
+                        <label
+                            class="text-white  flex p-3  bg-zinc-700 border border-gray-300  cursor-pointer focus:outline-none hover:bg-gray-400 hover:text-black peer-checked:shadow-inner peer-checked:bg-gray-250 peer-checked:border-transparent"
+                            for="shift_2">2</label>
+                    </li>
 
-            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                    <li class="relative">
+                        <input class="sr-only peer" type="radio" value="3" name="answer" id="shift_3">
+                        <label
+                            class="text-white  flex p-3  bg-zinc-700 border border-gray-300  cursor-pointer focus:outline-none hover:bg-gray-400 hover:text-black peer-checked:shadow-inner peer-checked:bg-gray-250 peer-checked:border-transparent"
+                            for="shift_3">3</label>
+                    </li>
+                    <li class="relative">
+                        <input class="sr-only peer" type="radio" value="4" name="answer" id="shift_4">
+                        <label
+                            class="text-white flex p-3  bg-zinc-700 border border-gray-300  cursor-pointer focus:outline-none hover:bg-gray-400 hover:text-black peer-checked:shadow-inner peer-checked:bg-gray-250 peer-checked:border-transparent"
+                            for="shift_4">4</label>
+                    </li>
+                    <li class="relative">
+                        <input class="sr-only peer" type="radio" value="5" name="answer" id="shift_5">
+                        <label
+                            class="text-white rounded-r-lg flex p-3  bg-zinc-700 border border-gray-300  cursor-pointer focus:outline-none hover:bg-gray-400 hover:text-black peer-checked:shadow-inner peer-checked:bg-gray-250 peer-checked:border-transparent"
+                            for="shift_5">5</label>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="container mx-auto w-2/3 flex flex-row gap-1 mt-8"><button
+                    class="cursor-auto bg-gray-600 rounded shadow-lg w-3/6 hover:shadow-xl mx-auto" id="submit-btn"
+                    type="submit" onclick="displayencode()" value="save">Encode</button>
+                <button class="cursor-auto bg-gray-600 rounded shadow-lg w-3/6 hover:shadow-xl mx-auto "
+                    onclick="displaydecode()">Decode</button>
+            </div>
+            <div class="container h-40 mt-8">
+                <label class="text-2xl" for="">Encrypted text</label><br><br>
+                <textarea class="rounded-md border text-white bg-zinc-700 w-full h-full focus:ring-2 outline-0"
+                    name="caesar_encrypted" id="caesar_encrypted"></textarea>
             </div>
         </div>
     </div>
-    <div class="container-fluid row d-flex justify-content-center mt-3 p-5">
-
-        <h1 class="display-5 text-light text-center">LEARN MORE</h1>
-        <div class="container-fluid ms-auto d-flex align-items-center justify-content-center mt-2">
-            <button class="btn btn-success mx-3 " type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Caesars Cipher</button>
-
-            <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom"
-                aria-labelledby="offcanvasBottomLabel">
-                <div class="offcanvas-header h-100">
-                    <h5 class="offcanvas-title" id="offcanvasBottomLabel">Article From Wikipedia</h5>
-                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body ">
-                    <iframe class="w-100" src="https://en.wikipedia.org/wiki/Caesar_cipher" frameborder="0"></iframe>
-                </div>
-            </div>
-            <button class="btn btn-success mx-3 px-5 " type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">DES</button>
-
-            <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom"
-                aria-labelledby="offcanvasBottomLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasBottomLabel">Data Encryption Standard</h5>
-                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body ">
-                    <iframe class="w-100" src="https://en.wikipedia.org/wiki/Data_Encryption_Standard"
-                        frameborder="0"></iframe>
-                </div>
-            </div>
-            <button class="btn btn-success px-5 mx-3" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">RSA</button>
-
-            <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom"
-                aria-labelledby="offcanvasBottomLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasBottomLabel">Rivest-Shamir-Adleman encryption</h5>
-                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body ">
-                    <iframe class="w-100" src="https://en.wikipedia.org/wiki/Data_Encryption_Standard"
-                        frameborder="0"></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="scripts/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <script src="scripts/caesars-encryption.js"></script>
+    <script src="scripts/caesars_encryption.js"></script>
     <script src="scripts/DES-encryption.js"></script>
 </body>
 
