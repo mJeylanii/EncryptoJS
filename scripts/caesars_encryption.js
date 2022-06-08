@@ -9,21 +9,22 @@ console.log(n);
 function displayencode()
 {
    shift(n);
-   text = document.getElementById("caesar_original").value;
-   document.getElementById('caesar_encrypted').value = encode(text);
-   document.getElementById('caesar_original').value ="";
+   text = document.getElementById("input").value;
+   document.getElementById('output').value = encode(text);
+   document.getElementById('input').value = "";
 }
 function displaydecode()
 {
     shift(n);
-    text = document.getElementById("caesar_encrypted").value;
-    document.getElementById('caesar_original').value = decode(text);
-    document.getElementById('caesar_encrypted').value = "";
+    text = document.getElementById("input").value;
+    document.getElementById('output').value = decode(text);
+    document.getElementById('input').value = "";
 }
 
 //******************************************** */
 /*Shifts the letters */
 function shift(n){
+
     for (let i = 0; i < alphabet.length; i++){
         let offset = (i + n) % alphabet.length;
         newalpha += alphabet[offset];
