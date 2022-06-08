@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encrypto</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" />
+
+</head>
+
+<body class="antialiased dark:bg-gray-900 text-white flex-col flex justify-center">
+    <div
+        class="mx-auto bg-zinc-800 rounded-lg container h-2/3  p-3 lg:w-1/4 sm:max-w-3/4 shadow-2xl p-4      bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6 dark:bg-gray-800">
+        <div class="header text-center mb-8">
+            <h2 class="text-3xl text-slate-400">Caesar's Encryptor</h2>
+        </div>
+        <div class="container flex flex-col justify-center content-center mt-12">
+            <label class="text-2xl text-slate-400 mb-5" for="">Input text</label>
+            <textarea
+                class="resize-none block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border   focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-5"
+                name="caesar-original" id="caesar_original"></textarea><br>
+            <label class="text-2xl text-slate-400 mb-5 text-center" for="">Number of shifts</label>
+            <div class="container flex flex-row md:min-w-3xl ">
+                <ul class="grid grid-cols-5 content-center rounded-lg text-white mx-auto">
+                    <li class="relative">
+                        <input class="sr-only peer" type="radio" value="1" name="answer" id="shift_1">
+                        <label
+                            class="text-slate-300 rounded-l-lg flex p-2 bg-gray-500 cursor-pointer focus:outline-none hover:bg-gray-400  peer-checked:shadow-inner peer-checked:bg-gray-700 peer-checked:font-bold "
+                            for="shift_1">1</label>
+                    </li>
+                    <li class="relative">
+                        <input class="sr-only peer" type="radio" value="2" name="answer" id="shift_2">
+                        <label
+                            class="text-slate-300 flex p-2 bg-gray-500  cursor-pointer focus:outline-none hover:bg-gray-400  peer-checked:shadow-inner peer-checked:bg-gray-700 peer-checked:font-bold peer-checked:font-bold "
+                            for="shift_2">2</label>
+                    </li>
+
+                    <li class="relative">
+                        <input class="sr-only peer" type="radio" value="3" name="answer" id="shift_3">
+                        <label
+                            class="text-slate-300  flex p-2   bg-gray-500    cursor-pointer focus:outline-none hover:bg-gray-400  peer-checked:shadow-inner peer-checked:bg-gray-700 peer-checked:font-bold peer-checked:font-bold"
+                            for="shift_3">3</label>
+                    </li>
+                    <li class="relative">
+                        <input class="sr-only peer" type="radio" value="4" name="answer" id="shift_4">
+                        <label
+                            class="text-slate-300 flex p-2  bg-gray-500    cursor-pointer focus:outline-none hover:bg-gray-400  peer-checked:shadow-inner peer-checked:bg-gray-700  peer-checked:font-bold"
+                            for="shift_4">4</label>
+                    </li>
+                    <li class="relative">
+                        <input class="sr-only peer" type="radio" value="5" name="answer" id="shift_5">
+                        <label
+                            class="text-slate-300 rounded-r-lg flex p-2   bg-gray-500     cursor-pointer focus:outline-none hover:bg-gray-400  peer-checked:shadow-inner peer-checked:bg-gray-700 peer-checked:font-bold"
+                            for="shift_5">5</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="container mx-auto w-2/3 flex flex-row gap-1 mt-8 font-bold"><button
+                    class=" text-center cursor-pointer  bg-gray-500 rounded shadow-lg w-3/6 hover:shadow-xl mx-auto hover:bg-gray-700 rounded-full p-2 text-slate-300 font-semibold"
+                    id="submit-btn" type="submit" onclick="displayencode()" value="save">Encode</button>
+                <button
+                    class=" cursor-pointer bg-gray-500 rounded shadow-lg w-3/6 hover:shadow-xl mx-auto hover:bg-gray-700 rounded-full p-2 text-slate-300 font-semibold"
+                    onclick="displaydecode()">Decode</button>
+            </div>
+            <div class="container h-40 mt-8">
+                <label class="text-2xl text-slate-400" for="">Output text</label><br><br>
+                <textarea
+                    class="resize-none block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 h-5/6"
+                    name="caesar_encrypted" id="caesar_encrypted" disabled></textarea>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/caesars_encryption.js"></script>
+    <script src="scripts/DES-encryption.js"></script>
+</body>
+
+</html>
